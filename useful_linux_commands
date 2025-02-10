@@ -1,7 +1,0 @@
-history
-!9 : execute 9th command in history
-!! : execute the last command
-
-cat file.txt : read
-head file.txt : read first 10 lines
-tail file.txt : read last 10 lines
