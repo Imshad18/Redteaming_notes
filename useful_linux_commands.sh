@@ -35,5 +35,9 @@ file  : view file info
 grep -rin Testvalue1 * | column -t | less -S  : search the "Testvalue1" string everywhere, organise column spaces and view the output with less.
 
 
+python httpS server
+ openssl req -new -x509 -keyout localhost.pem -out localhost.pem -days 365 -nodes
+ python3 -c "import http.server, ssl;server_address=('0.0.0.0',443);httpd=http.server.HTTPServer(server_address,http.server.SimpleHTTPRequestHandler);httpd.socket=ssl.wrap_socket(httpd.socket,server_side=True,certfile='localhost.pem',ssl_version=ssl.PROTOCOL_TLSv1_2);httpd.serve_forever()"
+
 
 
