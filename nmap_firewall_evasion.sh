@@ -6,3 +6,19 @@ nmap -sS -Pn -D RND,RND,ME -F MACHINE_IP   : all randomn decoy
 
 nmap -sS -Pn --proxies 10.10.13.37 MACHINE_IP   : proxies, we can chain multiple proxies , --proxies PROXY_URL.
 
+--spoof-mac MAC_ADDRESS  , but we should be on the same network 
+
+Spoof IP address: -S IP_ADDRESS
+This will only work if we have access to the spoofed IP device soo we can capture the response
+
+To fix a particular source port to confuse firewall -g or --source-port 
+
+
+Evasion Approach	                                                  Nmap Argument
+Hide a scan with decoys	                                      -D DECOY1_IP1,DECOY_IP2,ME
+Hide a scan with random decoys	                                    -D RND,RND,ME
+Use an HTTP/SOCKS4 proxy to relay connections                   	--proxies PROXY_URL
+Spoof source MAC address	                                      --spoof-mac MAC_ADDRESS
+Spoof source IP address	                                            -S IP_ADDRESS
+Use a specific source port number                    	-g PORT_NUM or --source-port PORT_NUM
+
