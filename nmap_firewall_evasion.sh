@@ -33,3 +33,8 @@ nmap -sS -Pn --mtu 8 -F MACHINE_IP    --mtu specifies how many bytes we wan tto 
 nmap -sS -Pn --data-length 64 -F MACHINE_IP        --data-length specific size of fragments, should be in multiple of 8
 
 
+   Evasion Approach	                 Nmap Argument
+Fragment IP data into 8 bytes	           -f
+Fragment IP data into 16 bytes	        -ff
+Fragment packets with given MTU	     --mtu VALUE
+Specify packet length	            --data-length NUM
