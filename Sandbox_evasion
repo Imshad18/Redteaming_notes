@@ -1,0 +1,10 @@
+1 .Sleeping through Sandboxes
+Blogs on bypassing sleep functions
+https://evasions.checkpoint.com/src/Evasions/techniques/timing.html
+https://www.joesecurity.org/blog/660946897093663167
+
+2. Geolocation
+One defining factor of Sandboxes is that they are often located off-premise and are hosted by Anti-Virus providers. If you know you are attacking TryHackMe, a European company, and your binary is executed in California, you can make an educated guess that the binary has ended up in a Sandbox. You may choose to implement a geolocation filter on your program that checks if the IP Address block is owned by the company you are targeting or if it is from a residential address space. There are several services that you can use to check this information:
+
+ifconfig.me
+https://rdap.arin.net/registry/ip/1.1.1.1
