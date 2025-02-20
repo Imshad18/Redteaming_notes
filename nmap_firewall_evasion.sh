@@ -1,3 +1,5 @@
+1. Evasion via Controlling the Source MAC/IP/Port
+
 nmap -sS -Pn -D 10.10.10.1,10.10.10.2,ME -F MACHINE_IP 
 -D is decoy
 if we dont put ME then nmap puts our IP randomnly
@@ -21,4 +23,13 @@ Use an HTTP/SOCKS4 proxy to relay connections                   	--proxies PROXY
 Spoof source MAC address	                                      --spoof-mac MAC_ADDRESS
 Spoof source IP address	                                            -S IP_ADDRESS
 Use a specific source port number                    	-g PORT_NUM or --source-port PORT_NUM
+
+_________________________________________________________________________________________________________________________________
+
+2. Evasion via Forcing Fragmentation, MTU, and Data Length
+
+nmap -sS -Pn -f -F MACHINE_IP       -f will fragment the packet to carry 8 bytes only,        -ff will do 16 bytes
+nmap -sS -Pn --mtu 8 -F MACHINE_IP    --mtu specifies how many bytes we wan tto sed , it should be in the multiple of 8
+nmap -sS -Pn --data-length 64 -F MACHINE_IP        --data-length specific size of fragments, should be in multiple of 8
+
 
