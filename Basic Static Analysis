@@ -4,3 +4,4 @@ To find strings use "strings <file>
 To deofuscate strigs: floss --no-static-strings <path to binary>
 
 Fuzzy hashes/SSDEEP  https://ssdeep-project.github.io/ssdeep/index.html
+>ssdeep.exe -l -r -d ..\mal\*
