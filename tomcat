@@ -1,0 +1,6 @@
+Users of Apache Tomcat 11.0.0-M1 to 11.0.1 should upgrade to 11.0.3 or later.
+Users of Apache Tomcat 10.1.0-M1 to 10.1.33 should upgrade to 10.1.35 or later.
+Users of Apache Tomcat 9.0.0.M1 to 9.0.97 should upgrade to 9.0.99 or later.
+
+
+https://github.com/iSee857/CVE-2024-50379-PoC
